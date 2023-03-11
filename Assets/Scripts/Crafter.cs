@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class Crafter : MonoBehaviour
 {
-    // Public pour les tests
     // Ingredients ajoutés dans le Crafter
     public string ingredient_1 = null;
     public string ingredient_2 = null;
@@ -17,8 +16,6 @@ public class Crafter : MonoBehaviour
     // Dico
     Dictionary<string, string> dicoFood = new Dictionary<string, string>();
 
-    // Variables de test
-    string testVar = "";
 
     // Start is called before the first frame update
     void Start()
