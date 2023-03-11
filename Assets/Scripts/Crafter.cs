@@ -12,6 +12,8 @@ public class Crafter : MonoBehaviour
     public string ingredient_1 = null;
     public string ingredient_2 = null;
 
+    public GameObject critic;
+
     // Dico
     Dictionary<string, string> dicoFood = new Dictionary<string, string>();
 
@@ -89,7 +91,16 @@ public class Crafter : MonoBehaviour
 
     public void AddIngredient(string ingredient)
     {
-
+        if (ingredient_1 == "")
+        {
+            ingredient_1 = ingredient;
+        }
+        else if (ingredient_2== "")
+        {
+            ingredient_2 = ingredient;
+            critic.GetComponent<Critic>().plat = Craft();
+            critic.GetComponent<Critic>().SearchPlat();
+        }
     }
 
     // Construire une clé pour tester dans le dictionnaire
@@ -120,6 +131,8 @@ public class Crafter : MonoBehaviour
             return resultRevert;
             
         }
+        ingredient_1 = "";
+        ingredient_2 = "";
         return result;
 
     }

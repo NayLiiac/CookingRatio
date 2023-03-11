@@ -8,7 +8,6 @@ public class Critic : MonoBehaviour
     public Dictionary<string, string> DicoPlats = new Dictionary<string, string>();
     public List<string> recipeUnlocked = new List<string>();
 
-    public bool platFini = false;
     public string plat;
 
     public CriticMessage message;
@@ -69,18 +68,9 @@ public class Critic : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        if (platFini)
-        {
-            SearchPlat();
-        }
-        
-    }
-
     public void SearchPlat()
     {
-        platFini = false;
+
         foreach (string note in DicoPlats.Values)
         {
             if (DicoPlats.ContainsKey(plat)) // SI ça contient le plat

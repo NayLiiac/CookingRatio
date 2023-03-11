@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class YoannPlayer : MonoBehaviour
@@ -53,6 +54,11 @@ public class YoannPlayer : MonoBehaviour
                 isTirroirOpen = false;
             }
         }
+        if (Input.GetKey(KeyCode.T))
+        {
+            this.PlaceIngredient();
+
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -83,6 +89,7 @@ public class YoannPlayer : MonoBehaviour
         if (heldIngredient != null)
         {
             crafter.GetComponent<Crafter>().AddIngredient(heldIngredient);
+            heldIngredient = null;
         }
         else
         {
