@@ -111,3 +111,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3aea6f83c73d64d9dba8bf1f3d6536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredient_1: 
+  ingredient_2: 
+  critic: {fileID: 0}
+--- !u!58 &1255794685481449375
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4079904271205090744}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000005960464, y: -5.0821977e-21}
+  serializedVersion: 2
+  m_Radius: 1.0000002
+--- !u!58 &5015459625864349234
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4079904271205090744}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5872907

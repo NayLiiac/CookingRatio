@@ -114,23 +114,19 @@ public class Crafter : MonoBehaviour
 
         string result = CheckDico(testKey);
         if (result == "platdouteux") {
-            string resultRevert = CheckDico(testKeyRevert);
-            if (resultRevert == "platdouteux") {
+
+            result = CheckDico(testKeyRevert);
+            if (result == "platdouteux") {
+
                 Debug.Log("Tu as réalisé de la merde");
-                ingredient_1 = "";
-                ingredient_2 = "";
-                return "platdouteux";
+                result = "platdouteux";
             }
-            Debug.Log("Tu as réalisé : " + resultRevert);
-            ingredient_1 = "";
-            ingredient_2 = "";
-            return resultRevert;
-            
         }
+
         ingredient_1 = "";
         ingredient_2 = "";
         Debug.Log("Tu as réalisé : " + result);
-        return result;
 
+        return result;
     }
 }
