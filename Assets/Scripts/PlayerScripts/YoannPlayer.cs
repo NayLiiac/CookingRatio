@@ -12,6 +12,7 @@ public class YoannPlayer : MonoBehaviour
 
     private bool inTirroirRange = false;
     private bool isTirroirOpen = false;
+    private bool inCrafterRange = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,18 +42,18 @@ public class YoannPlayer : MonoBehaviour
             }
         }
 
-        if (inTirroirRange)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (inTirroirRange)
             {
                 tirroir.GetComponent<TirroirBehaviour>().OpenUI();
                 isTirroirOpen = true;
             }
-        }
-        if (Input.GetKey(KeyCode.T))
-        {
-            this.PlaceIngredient();
-
+            
+            if (inCrafterRange)
+            {
+                this.PlaceIngredient();
+            }
         }
     }
 
@@ -62,6 +63,11 @@ public class YoannPlayer : MonoBehaviour
         {
             inTirroirRange = true;
         }
+
+        if (collision.tag == "Crafter")
+        {
+            inCrafterRange = true;
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
@@ -69,6 +75,10 @@ public class YoannPlayer : MonoBehaviour
         if (collision.tag == "Tirroir")
         {
             inTirroirRange = false;
+        }
+        if (collision.tag == "Crafter")
+        {
+            inCrafterRange = false;
         }
     }
 
@@ -84,6 +94,7 @@ public class YoannPlayer : MonoBehaviour
     {
         if (heldIngredient != null)
         {
+            Debug.Log("Tu as placé : " + heldIngredient);
             crafter.GetComponent<Crafter>().AddIngredient(heldIngredient);
             heldIngredient = null;
         }

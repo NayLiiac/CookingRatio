@@ -17,8 +17,6 @@ public class Crafter : MonoBehaviour
     // Dico
     Dictionary<string, string> dicoFood = new Dictionary<string, string>();
 
-    // Variables de test
-    string testVar = "";
 
     // Start is called before the first frame update
     void Start()
@@ -79,15 +77,7 @@ public class Crafter : MonoBehaviour
 
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.UpArrow)) {
-            testVar = Craft();
-            Debug.Log(testVar);
-        }
-    }
+    
 
     public void AddIngredient(string ingredient)
     {
@@ -126,13 +116,20 @@ public class Crafter : MonoBehaviour
         if (result == "platdouteux") {
             string resultRevert = CheckDico(testKeyRevert);
             if (resultRevert == "platdouteux") {
+                Debug.Log("Tu as réalisé de la merde");
+                ingredient_1 = "";
+                ingredient_2 = "";
                 return "platdouteux";
             }
+            Debug.Log("Tu as réalisé : " + resultRevert);
+            ingredient_1 = "";
+            ingredient_2 = "";
             return resultRevert;
             
         }
         ingredient_1 = "";
         ingredient_2 = "";
+        Debug.Log("Tu as réalisé : " + result);
         return result;
 
     }
