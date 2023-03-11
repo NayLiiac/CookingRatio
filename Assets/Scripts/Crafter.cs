@@ -1,14 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 public class Crafter : MonoBehaviour
 {
     // Public pour les tests
     // Ingredients ajoutés dans le Crafter
-    public string Ingredient_1 = null;
-    public string Ingredient_2 = null;
+    public string ingredient_1 = null;
+    public string ingredient_2 = null;
 
     // Dico
     Dictionary<string, string> dicoFood = new Dictionary<string, string>();
@@ -55,17 +56,17 @@ public class Crafter : MonoBehaviour
         // Bac 4
         dicoFood.Add("flinguefromage",          "gratindeflingue");
         dicoFood.Add("flingueeau",              "soupedeflingue");
-        dicoFood.Add("flinguesalade",           "saladedeflingue");
+        // dicoFood.Add("flinguesalade",           "saladedeflingue");
         dicoFood.Add("pommechausson",           "chaussonauxpommes");
         dicoFood.Add("oiseausansailes",         "lefeur");
         dicoFood.Add("arsenicfarine",           "puddingalarsenic");
-        dicoFood.Add("argentpoisson",           "saumonaloseille");
+        // dicoFood.Add("argentpoisson",           "saumonaloseille");
         dicoFood.Add("canardlaque",             "canardlaque");
         dicoFood.Add("tabacargent",             "snoopdogg");
         dicoFood.Add("krakensalade",            "saladedekraken");
-        dicoFood.Add("chaussonjambon",          "chaussonaujambon");
+        // dicoFood.Add("chaussonjambon",          "chaussonaujambon");
         dicoFood.Add("jokerorange",             "jusdorange");
-        dicoFood.Add("feuflingue",              "armeafeu");
+        // dicoFood.Add("feuflingue",              "armeafeu");
         dicoFood.Add("consolejoker",            "batman");
         dicoFood.Add("bonbonconsole",           "kirby");
         dicoFood.Add("inimoisiarsenic",         "unknown");
@@ -74,10 +75,10 @@ public class Crafter : MonoBehaviour
         dicoFood.Add("krakenbeurre",            "krakenaubeurre");
         dicoFood.Add("krakenfarine",            "cracotte");
         dicoFood.Add("alcoolkraken",            "lekraken");
-        dicoFood.Add("laqueargent",             "piscinedargent");
-        dicoFood.Add("inimoisicereal",          "ptitdejdouteux");
+        // dicoFood.Add("laqueargent",             "piscinedargent");
+        // dicoFood.Add("inimoisicereal",          "ptitdejdouteux");
         dicoFood.Add("inimoisiinimoisi",        "boitedepandore");
-        dicoFood.Add("krakenbois",              "bateaupirate");
+        // dicoFood.Add("krakenbois",              "bateaupirate");
 
 
     }
@@ -102,8 +103,20 @@ public class Crafter : MonoBehaviour
     }
 
     public string Craft() {
+        string testKey = BuildString(ingredient_1, ingredient_2);
+        string testKeyRevert = BuildString(ingredient_2, ingredient_1);
 
 
-        return "platdouteux";
+        string result = CheckDico(testKey);
+        if(result == "platdouteux") {
+            string resultRevert = CheckDico(testKeyRevert);
+            if (resultRevert == "platdouteux") {
+                return "platdouteux";
+            }
+            return "platdouteux";
+            
+        }
+        return result;
+
     }
 }
