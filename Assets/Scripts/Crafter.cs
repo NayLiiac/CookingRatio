@@ -17,7 +17,7 @@ public class Crafter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Init dico
+        // Init dicotonnaire des plats
         // Bac 1
         dicoFood.Add("riztomate",               "salade");
         dicoFood.Add("surimitomate",            "salade");
@@ -77,11 +77,17 @@ public class Crafter : MonoBehaviour
         dicoFood.Add("inimoisicereal",          "ptitdejdouteux");
         dicoFood.Add("inimoisiinimoisi",        "boitedepandore");
         dicoFood.Add("krakenbois",              "bateaupirate");
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public string BuildString(string ing1, string ing2) {
+        return ing1 + ing2;
     }
 }
