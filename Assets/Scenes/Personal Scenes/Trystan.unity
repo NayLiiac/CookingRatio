@@ -405,6 +405,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3516169456980223949, guid: 912f139742b3d9b48a58319272281467, type: 3}
+      propertyPath: ingredient_1
+      value: salade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516169456980223949, guid: 912f139742b3d9b48a58319272281467, type: 3}
+      propertyPath: ingredient_2
+      value: tomate
+      objectReference: {fileID: 0}
     - target: {fileID: 4079904271205090692, guid: 912f139742b3d9b48a58319272281467, type: 3}
       propertyPath: m_RootOrder
       value: 3
