@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    bool Pressed = false;
 
     private void Start()
     {
