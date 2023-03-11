@@ -6,6 +6,7 @@ public class YoannPlayer : MonoBehaviour
 {
     public int speed = 5;
     public GameObject tirroir;
+    public string heldIngredient = null;
 
     private bool InTirroirRange = false;
     // Start is called before the first frame update
@@ -63,6 +64,10 @@ public class YoannPlayer : MonoBehaviour
         }
     }
 
-    
-
+    public void RecieveIngredient(string ingredient)
+    {
+        this.heldIngredient = ingredient;
+        Debug.Log(heldIngredient);
+        tirroir.GetComponent<TirroirBehaviour>().CloseUI();
+    }
 }

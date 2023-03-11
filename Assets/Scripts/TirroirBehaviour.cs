@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TirroirBehaviour : MonoBehaviour
 {
-    public Canvas UI_Tirroir;
+    public Canvas UITirroir;
     // Start is called before the first frame update
     void Start()
     {
-        UI_Tirroir.enabled = false;
+        UITirroir.enabled = false;
     }
 
     // Update is called once per frame
@@ -19,11 +19,13 @@ public class TirroirBehaviour : MonoBehaviour
 
     public void OpenUI()
     {
-        UI_Tirroir.enabled = true;
+        UITirroir.enabled = true;
     }
 
     public void CloseUI()
     {
-        UI_Tirroir.enabled = false;
+        UITirroir.enabled = false;
     }
+
+    
 }
