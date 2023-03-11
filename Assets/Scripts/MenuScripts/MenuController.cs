@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+<<<<<<< HEAD
+=======
+    bool Pressed = false;
+>>>>>>> ee04cdd (Début du menu et credit)
 
     private void Start()
     {
