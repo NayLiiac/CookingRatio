@@ -66,17 +66,24 @@ public class Critic : MonoBehaviour
         DicoPlats.Add("sushi",              "C’est nippon ni mauvais");
         DicoPlats.Add("platdouteux",        "OOOH mais qu’est-ce que c’est que ce truc là ?");
 
-        foreach (string note in DicoPlats.Values)
-        {
-            if (DicoPlats.ContainsKey(plat))
-            {
-                Debug.Log(DicoPlats[plat]);
-            }
-        }
     }
 
     void Update()
     {
-
+        if(platFini)
+        {
+            foreach (string note in DicoPlats.Values)
+            {
+                if (DicoPlats.ContainsKey(plat))
+                {
+                    Debug.Log(DicoPlats[plat]);
+                    platFini = false;
+                }
+            }
+        }
+        else
+        {
+            return;
+        }
     }
 }
