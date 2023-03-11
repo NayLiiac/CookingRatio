@@ -6,13 +6,18 @@ using UnityEngine.UI;
 
 public class RecipesCounter : MonoBehaviour
 {
-    public int scoreValue;
+    public int scoreValue = 0;
     public TextMeshProUGUI score;
 
-    void Update()
+    void Start()
     {
-
         score.text = scoreValue.ToString();
     }
-
+    
+    public void AddRecipe()
+    {
+        scoreValue++;
+        score.text = scoreValue.ToString();
+    }
+    
 }
