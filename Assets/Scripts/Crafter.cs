@@ -87,6 +87,11 @@ public class Crafter : MonoBehaviour
         }
     }
 
+    public void AddIngredient(string ingredient)
+    {
+
+    }
+
     // Construire une clé pour tester dans le dictionnaire
     public string BuildString(string ing1, string ing2) {
         return ing1 + ing2;

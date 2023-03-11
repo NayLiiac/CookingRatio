@@ -6,6 +6,7 @@ public class YoannPlayer : MonoBehaviour
 {
     public int speed = 5;
     public GameObject tirroir;
+    public GameObject crafter;
     public string heldIngredient = null;
 
     private bool inTirroirRange = false;
@@ -75,5 +76,17 @@ public class YoannPlayer : MonoBehaviour
         this.heldIngredient = ingredient;
         Debug.Log(heldIngredient);
         tirroir.GetComponent<TirroirBehaviour>().CloseUI();
+    }
+
+    public void PlaceIngredient()
+    {
+        if (heldIngredient != null)
+        {
+            crafter.GetComponent<Crafter>().AddIngredient(heldIngredient);
+        }
+        else
+        {
+            Debug.Log("ERROR : Player : PlaceIngredient : heldIngredient is null");
+        }
     }
 }
