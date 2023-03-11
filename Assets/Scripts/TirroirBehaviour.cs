@@ -8,24 +8,21 @@ public class TirroirBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UITirroir.enabled = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //UITirroir.enabled = false;
+        UITirroir.gameObject.SetActive(false);
     }
 
     public void OpenUI()
     {
-        UITirroir.enabled = true;
+        UITirroir.gameObject.SetActive(true);
     }
 
     public void CloseUI()
     {
-        UITirroir.enabled = false;
+        //UITirroir.enabled = false;
+        UITirroir.gameObject.SetActive(false);
     }
+
 
     
 }
