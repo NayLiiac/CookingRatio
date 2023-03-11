@@ -1,23 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using UnityEditor.TerrainTools;
 using UnityEngine;
 
 public class Crafter : MonoBehaviour
 {
     // Public pour les tests
-    // Changer GameObject --> Ingredient
     // Ingredients ajoutés dans le Crafter
-    public GameObject Ingredient_1 = null;
-    public GameObject Ingredient_2 = null;
+    public string ingredient_1 = null;
+    public string ingredient_2 = null;
 
     // Dico
     Dictionary<string, string> dicoFood = new Dictionary<string, string>();
-    
+
+    // Variables de test
+    string testVar = "";
 
     // Start is called before the first frame update
     void Start()
     {
-        // Init dico
+        // Init dictionnaire des plats
         // Bac 1
         dicoFood.Add("riztomate",               "salade");
         dicoFood.Add("surimitomate",            "salade");
@@ -28,9 +32,8 @@ public class Crafter : MonoBehaviour
         dicoFood.Add("patatefromage",           "raclette");
         dicoFood.Add("oeuffromage",             "omelettefromage");
         dicoFood.Add("rizlait",                 "rizaulait");
-        dicoFood.Add("patatefromage",           "raclette");
         dicoFood.Add("patesjambon",             "patesjambon");
-        dicoFood.Add("patatechou",              "poelleedepatates");
+        dicoFood.Add("patatechou",              "poeleedepatates");
         dicoFood.Add("tomatejambon",            "tomatesfarcies");
         dicoFood.Add("patatesteak",             "steakfrites");
         dicoFood.Add("patessteak",              "patesbolognaises");
@@ -55,17 +58,13 @@ public class Crafter : MonoBehaviour
         // Bac 4
         dicoFood.Add("flinguefromage",          "gratindeflingue");
         dicoFood.Add("flingueeau",              "soupedeflingue");
-        dicoFood.Add("flinguesalade",           "saladedeflingue");
         dicoFood.Add("pommechausson",           "chaussonauxpommes");
         dicoFood.Add("oiseausansailes",         "lefeur");
         dicoFood.Add("arsenicfarine",           "puddingalarsenic");
-        dicoFood.Add("argentpoisson",           "saumonaloseille");
         dicoFood.Add("canardlaque",             "canardlaque");
         dicoFood.Add("tabacargent",             "snoopdogg");
         dicoFood.Add("krakensalade",            "saladedekraken");
-        dicoFood.Add("chaussonjambon",          "chaussonaujambon");
         dicoFood.Add("jokerorange",             "jusdorange");
-        dicoFood.Add("feuflingue",              "armeafeu");
         dicoFood.Add("consolejoker",            "batman");
         dicoFood.Add("bonbonconsole",           "kirby");
         dicoFood.Add("inimoisiarsenic",         "unknown");
@@ -74,14 +73,49 @@ public class Crafter : MonoBehaviour
         dicoFood.Add("krakenbeurre",            "krakenaubeurre");
         dicoFood.Add("krakenfarine",            "cracotte");
         dicoFood.Add("alcoolkraken",            "lekraken");
-        dicoFood.Add("inimoisicereal",          "ptitdejdouteux");
         dicoFood.Add("inimoisiinimoisi",        "boitedepandore");
-        dicoFood.Add("krakenbois",              "bateaupirate");
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            testVar = Craft();
+            Debug.Log(testVar);
+        }
+    }
+
+    // Construire une clé pour tester dans le dictionnaire
+    public string BuildString(string ing1, string ing2) {
+        return ing1 + ing2;
+    }
+
+    // Vérifier une correspondance avec le dictionnaire
+    public string CheckDico(string key) {
+        string value = "";
+        dicoFood.TryGetValue(key, out value);
+        if (value == null) {
+            value = "platdouteux";
+        }
+        return value;
+    }
+
+    public string Craft() {
+        string testKey = BuildString(ingredient_1, ingredient_2);
+        string testKeyRevert = BuildString(ingredient_2, ingredient_1);
+
+        string result = CheckDico(testKey);
+        if (result == "platdouteux") {
+            string resultRevert = CheckDico(testKeyRevert);
+            if (resultRevert == "platdouteux") {
+                return "platdouteux";
+            }
+            return resultRevert;
+            
+        }
+        return result;
+
     }
 }
