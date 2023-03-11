@@ -83,10 +83,7 @@ public class Crafter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow)) {
-            testVar = Craft();
-            Debug.Log(testVar);
-        }
+
     }
 
     public void AddIngredient(string ingredient)
