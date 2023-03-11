@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4079904271205090692}
   - component: {fileID: 4079904271205090693}
   - component: {fileID: 4079904271205090746}
-  - component: {fileID: 4079904271205090747}
   - component: {fileID: 3516169456980223949}
+  - component: {fileID: 1255794685481449375}
+  - component: {fileID: 5015459625864349234}
   m_Layer: 0
   m_Name: Crafter
   m_TagString: Untagged
@@ -85,20 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4079904271205090747
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4079904271205090744}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &3516169456980223949
 MonoBehaviour:
   m_ObjectHideFlags: 0
