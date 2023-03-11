@@ -8,7 +8,8 @@ public class YoannPlayer : MonoBehaviour
     public GameObject tirroir;
     public string heldIngredient = null;
 
-    private bool InTirroirRange = false;
+    private bool inTirroirRange = false;
+    private bool isTirroirOpen = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,32 +19,37 @@ public class YoannPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (!isTirroirOpen)
         {
-            this.transform.position = this.transform.position + new Vector3 (0, speed * Time.deltaTime, 0);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            this.transform.position = this.transform.position + new Vector3 (0, -speed * Time.deltaTime, 0);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            this.transform.position = this.transform.position + new Vector3 (-speed * Time.deltaTime, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            this.transform.position = this.transform.position + new Vector3 (speed * Time.deltaTime, 0, 0);
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                this.transform.position = this.transform.position + new Vector3(0, speed * Time.deltaTime, 0);
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                this.transform.position = this.transform.position + new Vector3(0, -speed * Time.deltaTime, 0);
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                this.transform.position = this.transform.position + new Vector3(-speed * Time.deltaTime, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                this.transform.position = this.transform.position + new Vector3(speed * Time.deltaTime, 0, 0);
+            }
         }
 
-        if (InTirroirRange)
+        if (inTirroirRange)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 tirroir.GetComponent<TirroirBehaviour>().OpenUI();
+                isTirroirOpen = true;
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
                 tirroir.GetComponent<TirroirBehaviour>().CloseUI();
+                isTirroirOpen = false;
             }
         }
     }
@@ -52,7 +58,7 @@ public class YoannPlayer : MonoBehaviour
     {
         if (collision.tag == "Tirroir")
         {
-            InTirroirRange = true;
+            inTirroirRange = true;
         }
     }
 
@@ -60,7 +66,7 @@ public class YoannPlayer : MonoBehaviour
     {
         if (collision.tag == "Tirroir")
         {
-            InTirroirRange = false;
+            inTirroirRange = false;
         }
     }
 
