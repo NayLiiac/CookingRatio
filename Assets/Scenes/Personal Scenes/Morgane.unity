@@ -260,7 +260,11 @@ CanvasRenderer:
   m_GameObject: {fileID: 140617560}
   m_CullTransparentMesh: 1
 =======
+<<<<<<< HEAD
 >>>>>>> ee04cdd (Début du menu et credit)
+=======
+>>>>>>> 2a48d8a (Début du menu et credit)
+>>>>>>> 113505c (Début du menu et credit)
 --- !u!1 &210714099
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +684,11 @@ CanvasRenderer:
   m_GameObject: {fileID: 291740039}
   m_CullTransparentMesh: 1
 =======
+<<<<<<< HEAD
 >>>>>>> ee04cdd (Début du menu et credit)
+=======
+>>>>>>> 2a48d8a (Début du menu et credit)
+>>>>>>> 113505c (Début du menu et credit)
 --- !u!1 &309388988
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +848,11 @@ GameObject:
   m_IsActive: 0
 =======
   m_IsActive: 1
+<<<<<<< HEAD
 >>>>>>> ee04cdd (Début du menu et credit)
+=======
+>>>>>>> 2a48d8a (Début du menu et credit)
+>>>>>>> 113505c (Début du menu et credit)
 --- !u!114 &410534564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -921,7 +933,11 @@ RectTransform:
   - {fileID: 910752292}
   - {fileID: 1728657916}
 =======
+<<<<<<< HEAD
 >>>>>>> ee04cdd (Début du menu et credit)
+=======
+>>>>>>> 2a48d8a (Début du menu et credit)
+>>>>>>> 113505c (Début du menu et credit)
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -948,7 +964,11 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 17ff5f4ff1ba83b449ec57bfa4dce859, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
+<<<<<<< HEAD
 >>>>>>> ee04cdd (Début du menu et credit)
+=======
+>>>>>>> 2a48d8a (Début du menu et credit)
+>>>>>>> 113505c (Début du menu et credit)
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1450,7 +1470,11 @@ CanvasRenderer:
   m_GameObject: {fileID: 661212525}
   m_CullTransparentMesh: 1
 =======
+<<<<<<< HEAD
 >>>>>>> ee04cdd (Début du menu et credit)
+=======
+>>>>>>> 2a48d8a (Début du menu et credit)
+>>>>>>> 113505c (Début du menu et credit)
 --- !u!1 &795479043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,7 +1751,11 @@ CanvasRenderer:
   m_GameObject: {fileID: 910752291}
   m_CullTransparentMesh: 1
 =======
+<<<<<<< HEAD
 >>>>>>> ee04cdd (Début du menu et credit)
+=======
+>>>>>>> 2a48d8a (Début du menu et credit)
+>>>>>>> 113505c (Début du menu et credit)
 --- !u!1 &912559191
 GameObject:
   m_ObjectHideFlags: 0
@@ -2231,7 +2259,11 @@ CanvasRenderer:
   m_GameObject: {fileID: 1122067009}
   m_CullTransparentMesh: 1
 =======
+<<<<<<< HEAD
 >>>>>>> ee04cdd (Début du menu et credit)
+=======
+>>>>>>> 2a48d8a (Début du menu et credit)
+>>>>>>> 113505c (Début du menu et credit)
 --- !u!1 &1166657692
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,7 +2670,11 @@ CanvasRenderer:
   m_GameObject: {fileID: 1450097510}
   m_CullTransparentMesh: 1
 =======
+<<<<<<< HEAD
 >>>>>>> ee04cdd (Début du menu et credit)
+=======
+>>>>>>> 2a48d8a (Début du menu et credit)
+>>>>>>> 113505c (Début du menu et credit)
 --- !u!1 &1547318967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3336,7 +3372,11 @@ CanvasRenderer:
   m_GameObject: {fileID: 1728657915}
   m_CullTransparentMesh: 1
 =======
+<<<<<<< HEAD
 >>>>>>> ee04cdd (Début du menu et credit)
+=======
+>>>>>>> 2a48d8a (Début du menu et credit)
+>>>>>>> 113505c (Début du menu et credit)
 --- !u!1 &1750884335
 GameObject:
   m_ObjectHideFlags: 0
@@ -3608,7 +3648,11 @@ CanvasRenderer:
   m_GameObject: {fileID: 1810834889}
   m_CullTransparentMesh: 1
 =======
+<<<<<<< HEAD
 >>>>>>> ee04cdd (Début du menu et credit)
+=======
+>>>>>>> 2a48d8a (Début du menu et credit)
+>>>>>>> 113505c (Début du menu et credit)
 --- !u!1 &1890311473
 GameObject:
   m_ObjectHideFlags: 0
@@ -3625,7 +3669,11 @@ GameObject:
   m_Name: Credit
 =======
   m_Name: Text (TMP)
+<<<<<<< HEAD
 >>>>>>> ee04cdd (Début du menu et credit)
+=======
+>>>>>>> 2a48d8a (Début du menu et credit)
+>>>>>>> 113505c (Début du menu et credit)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4022,7 +4070,11 @@ RectTransform:
   m_SizeDelta: {x: 768.021, y: 358.079}
   m_Pivot: {x: 0.5, y: 0.5}
 =======
+<<<<<<< HEAD
 >>>>>>> ee04cdd (Début du menu et credit)
+=======
+>>>>>>> 2a48d8a (Début du menu et credit)
+>>>>>>> 113505c (Début du menu et credit)
 --- !u!1 &2028657544
 GameObject:
   m_ObjectHideFlags: 0

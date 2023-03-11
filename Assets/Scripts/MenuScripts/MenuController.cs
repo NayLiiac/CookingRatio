@@ -9,7 +9,11 @@ public class MenuController : MonoBehaviour
 <<<<<<< HEAD
 =======
     bool Pressed = false;
+<<<<<<< HEAD
 >>>>>>> ee04cdd (Début du menu et credit)
+=======
+>>>>>>> 2a48d8a (Début du menu et credit)
+>>>>>>> 113505c (Début du menu et credit)
 
     private void Start()
     {
