@@ -48,11 +48,6 @@ public class YoannPlayer : MonoBehaviour
                 tirroir.GetComponent<TirroirBehaviour>().OpenUI();
                 isTirroirOpen = true;
             }
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                tirroir.GetComponent<TirroirBehaviour>().CloseUI();
-                isTirroirOpen = false;
-            }
         }
         if (Input.GetKey(KeyCode.T))
         {
@@ -82,6 +77,7 @@ public class YoannPlayer : MonoBehaviour
         this.heldIngredient = ingredient;
         Debug.Log(heldIngredient);
         tirroir.GetComponent<TirroirBehaviour>().CloseUI();
+        isTirroirOpen = false;
     }
 
     public void PlaceIngredient()
