@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,9 @@ using UnityEngine;
 public class Crafter : MonoBehaviour
 {
     // Public pour les tests
-    // Changer GameObject --> Ingredient
     // Ingredients ajoutés dans le Crafter
-    public GameObject Ingredient_1 = null;
-    public GameObject Ingredient_2 = null;
+    public string Ingredient_1 = null;
+    public string Ingredient_2 = null;
 
     // Dico
     Dictionary<string, string> dicoFood = new Dictionary<string, string>();
@@ -17,7 +17,7 @@ public class Crafter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Init dicotonnaire des plats
+        // Init dictionnaire des plats
         // Bac 1
         dicoFood.Add("riztomate",               "salade");
         dicoFood.Add("surimitomate",            "salade");
@@ -74,6 +74,7 @@ public class Crafter : MonoBehaviour
         dicoFood.Add("krakenbeurre",            "krakenaubeurre");
         dicoFood.Add("krakenfarine",            "cracotte");
         dicoFood.Add("alcoolkraken",            "lekraken");
+        dicoFood.Add("laqueargent",             "piscinedargent");
         dicoFood.Add("inimoisicereal",          "ptitdejdouteux");
         dicoFood.Add("inimoisiinimoisi",        "boitedepandore");
         dicoFood.Add("krakenbois",              "bateaupirate");
@@ -87,7 +88,22 @@ public class Crafter : MonoBehaviour
         
     }
 
+    // Construire une clé pour tester dans le dictionnaire
     public string BuildString(string ing1, string ing2) {
         return ing1 + ing2;
+    }
+
+    // Vérifier une correspondance avec le dictionnaire
+    public string CheckDico(string key) {
+        string value = "platdouteux";
+        dicoFood.TryGetValue(key, out value);
+
+        return value;
+    }
+
+    public string Craft() {
+
+
+        return "platdouteux";
     }
 }
