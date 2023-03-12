@@ -8,16 +8,22 @@ public class Poussin : MonoBehaviour
     public float speed;
     public Transform player;
     public Critic critic;
+    public Crafter crafter;
     public GameObject poussin;
+    public bool eclosion = false;
     void Update()
     {
-        Debug.Log("coucouuuu");
-        if (critic.DicoPlats.Equals(" “Ce pigeon est tellement cru qu’il peut encore voler!” Gordon Ramsay"))
+        if (critic.DicoPlats.Equals("poussin"))
         {
-            Debug.Log("poussiiin");
-
             poussin.SetActive(true);
+            eclosion = true;
+            Debug.Log("poussiiin");
+        }
+        if (eclosion)
+        {
             transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * speed);
+            Debug.Log("piou piou");
         }
     }
+   
 }
