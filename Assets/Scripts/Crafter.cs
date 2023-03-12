@@ -1,3 +1,4 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,6 +6,8 @@ using System.Globalization;
 using UnityEditor.TerrainTools;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class Crafter : MonoBehaviour
 {
@@ -18,16 +21,20 @@ public class Crafter : MonoBehaviour
 
     // Dico
     Dictionary<string, string> dicoFood = new Dictionary<string, string>();
-    Dictionary<string, Image> dicoImage = new Dictionary<string , Image>();
+    Dictionary<string, Sprite> dicoImage = new Dictionary<string , Sprite>();
 
+    public Sprite[] imageTab = new Sprite[0];
+    public Sprite defaultSprite;
 
+    private AudioSource soundEffect;
 
     // Start is called before the first frame update
     void Start()
     {
         this.initRecettes();
+        this.initFoodImages();
 
-
+        soundEffect = GetComponent<AudioSource>();
         foodPicture.gameObject.SetActive(false);
     }
 
@@ -87,12 +94,46 @@ public class Crafter : MonoBehaviour
         dicoFood.Add("alcoolkraken", "lekraken");
         dicoFood.Add("inimoisiinimoisi", "boitedepandore");
     }
-    /*
+    
     private void initFoodImages()
     {
-        dicoImage.Add("crepe", foodPicture);
+        //Bac 1
+        dicoImage.Add("salade",         imageTab[0]);
+        dicoImage.Add("crepes",         imageTab[1]);
+        dicoImage.Add("pain",           imageTab[2]);
+        dicoImage.Add("pommeaufour",    imageTab[3]);
+        // Bac 2
+        dicoImage.Add("raclette",           imageTab[4]);
+        dicoImage.Add("omelettefromage",    imageTab[5]);
+        dicoImage.Add("rizaulait",          imageTab[6]);
+        dicoImage.Add("patesjambon",        imageTab[7]);
+        dicoImage.Add("poeleedepatates",    imageTab[8]);
+        dicoImage.Add("tomatesfarcies",     imageTab[9]);
+        dicoImage.Add("steakfrites",        imageTab[10]);
+        dicoImage.Add("patesbolognaises",   imageTab[11]);
+        dicoImage.Add("tartare",            imageTab[12]);
+        dicoImage.Add("sushi",              imageTab[13]);
+        //Bac 3
+        /*
+        dicoFood.Add("eaubonbon", "maoambubbletea");
+        dicoFood.Add("choufleur", "choufleur");
+        dicoFood.Add("poissonchips", "fishandchips");
+        dicoFood.Add("poissonchocolat", "lefisheauchocolat");
+        dicoFood.Add("tabacsurimi", "surispliff");
+        dicoFood.Add("feubonbon", "chamallowgrille");
+        dicoFood.Add("laitcereal", "ptitdej");
+        dicoFood.Add("feualcool", "cocktailmolotov");
+        dicoFood.Add("orangechocolat", "gouter");
+        dicoFood.Add("beurrechocolat", "painauchocolat");
+        dicoFood.Add("sucrefeu", "caramel");
+        dicoFood.Add("boisalcool", "tonneauderhum");
+        dicoFood.Add("tissutabac", "cigarette");
+        dicoFood.Add("tomatetissu", "torchontache");
+        dicoFood.Add("saladefeu", "lanceroquettes");
+        */
     }
-    */
+    
+
 
     public void AddIngredient(string ingredient)
     {
@@ -112,8 +153,9 @@ public class Crafter : MonoBehaviour
         return ing1 + ing2;
     }
 
+
     // Vérifier une correspondance avec le dictionnaire
-    public string CheckDico(string key) {
+    public string CheckDicoFood(string key) {
         string value = "";
         dicoFood.TryGetValue(key, out value);
         if (value == null) {
@@ -122,14 +164,27 @@ public class Crafter : MonoBehaviour
         return value;
     }
 
+    public Sprite CheckDicoImage(string key)
+    {
+        Sprite value = defaultSprite;
+        dicoImage.TryGetValue(key, out value);
+        if (value == null)
+        {
+            Debug.Log("C'est nul");
+            value = defaultSprite;
+        }
+        return value;
+    }
+
+    
     public void Craft() {
         string testKey = BuildString(ingredient_1, ingredient_2);
         string testKeyRevert = BuildString(ingredient_2, ingredient_1);
 
-        string result = CheckDico(testKey);
+        string result = CheckDicoFood(testKey);
         if (result == "platdouteux") {
 
-            result = CheckDico(testKeyRevert);
+            result = CheckDicoFood(testKeyRevert);
             if (result == "platdouteux") {
 
                 Debug.Log("Tu as réalisé de la merde");
@@ -143,12 +198,17 @@ public class Crafter : MonoBehaviour
         StartCoroutine(DisplayFood(result));
     }
 
+
     IEnumerator DisplayFood(string food)
     {
+        foodPicture.sprite = CheckDicoImage(food);
         foodPicture.gameObject.SetActive(true);
+        foodPicture.GetComponent<Animator>().SetTrigger("Jumpscare");
+        soundEffect.PlayDelayed((float)0.4);
 
         Debug.Log("Entre coroutine");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds((float)1);
+        
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         Debug.Log("Got Input");
 
