@@ -78,7 +78,7 @@ public class Crafter : MonoBehaviour
         dicoFood.Add("flinguefromage", "gratindeflingue");
         dicoFood.Add("flingueeau", "soupedeflingue");
         dicoFood.Add("pommechausson", "chaussonauxpommes");
-        dicoFood.Add("oiseausansailes", "lefeur");
+        dicoFood.Add("oiseausansailesfleur", "lefeur");
         dicoFood.Add("arsenicfarine", "puddingalarsenic");
         dicoFood.Add("canardlaque", "canardlaque");
         dicoFood.Add("tabacargent", "snoopdogg");
@@ -114,23 +114,41 @@ public class Crafter : MonoBehaviour
         dicoImage.Add("tartare",            imageTab[12]);
         dicoImage.Add("sushi",              imageTab[13]);
         //Bac 3
-        /*
-        dicoFood.Add("eaubonbon", "maoambubbletea");
-        dicoFood.Add("choufleur", "choufleur");
-        dicoFood.Add("poissonchips", "fishandchips");
-        dicoFood.Add("poissonchocolat", "lefisheauchocolat");
-        dicoFood.Add("tabacsurimi", "surispliff");
-        dicoFood.Add("feubonbon", "chamallowgrille");
-        dicoFood.Add("laitcereal", "ptitdej");
-        dicoFood.Add("feualcool", "cocktailmolotov");
-        dicoFood.Add("orangechocolat", "gouter");
-        dicoFood.Add("beurrechocolat", "painauchocolat");
-        dicoFood.Add("sucrefeu", "caramel");
-        dicoFood.Add("boisalcool", "tonneauderhum");
-        dicoFood.Add("tissutabac", "cigarette");
-        dicoFood.Add("tomatetissu", "torchontache");
-        dicoFood.Add("saladefeu", "lanceroquettes");
-        */
+        dicoImage.Add("maoambubbletea",     imageTab[14]);
+        dicoImage.Add("choufleur",          imageTab[15]);
+        dicoImage.Add("fishandchips",       imageTab[16]);
+        dicoImage.Add("lefisheauchocolat",  imageTab[17]);
+        dicoImage.Add("surispliff",         imageTab[18]);
+        dicoImage.Add("chamallowgrille",    imageTab[19]);
+        dicoImage.Add("ptitdej",            imageTab[20]);
+        dicoImage.Add("cocktailmolotov",    imageTab[21]);
+        dicoImage.Add("gouter",             imageTab[22]);
+        dicoImage.Add("painauchocolat",     imageTab[23]);
+        dicoImage.Add("caramel",            imageTab[24]);
+        dicoImage.Add("tonneauderhum",      imageTab[25]);
+        dicoImage.Add("cigarette",          imageTab[26]);
+        dicoImage.Add("torchontache",       imageTab[27]);
+        dicoImage.Add("lanceroquettes",     imageTab[28]);
+        // Bac 4
+        dicoImage.Add("gratindeflingue",    imageTab[29]);
+        dicoImage.Add("soupedeflingue",     imageTab[30]);
+        dicoImage.Add("chaussonauxpommes",  imageTab[31]);
+        dicoImage.Add("lefeur",             imageTab[32]);
+        dicoImage.Add("puddingalarsenic",   imageTab[33]);
+        dicoImage.Add("canardlaque",        imageTab[34]);
+        dicoImage.Add("snoopdogg",          imageTab[35]);
+        dicoImage.Add("saladedekraken",     imageTab[36]);
+        dicoImage.Add("jusdorange",         imageTab[37]);
+        dicoImage.Add("batman",             imageTab[38]);
+        dicoImage.Add("kirby",              imageTab[39]);
+        dicoImage.Add("unknown",            imageTab[40]);
+        dicoImage.Add("poussin",            imageTab[41]);
+        dicoImage.Add("soireegaming",       imageTab[42]);
+        dicoImage.Add("krakenaubeurre",     imageTab[43]);
+        dicoImage.Add("cracotte",           imageTab[44]);
+        dicoImage.Add("lekraken",           imageTab[45]);
+        dicoImage.Add("boitedepandore",     imageTab[46]);
+        
     }
     
 
