@@ -24,6 +24,7 @@ public class RecipesCounter : MonoBehaviour
         if (scoreValue == scoreMax)
         {
             SceneManager.LoadScene("End");
+
         }
     }
     

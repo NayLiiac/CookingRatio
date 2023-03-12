@@ -9,14 +9,11 @@ public class Appreciation : MonoBehaviour
     public string FeedBackSentence;
 
     public PlatDouteuxCounter counter;
-    public bool Check = false;
 
     void Update()
     {
-        if (Check)
-        {
-            EndGameFeedBack();
-        }
+        EndGameFeedBack();
+        
     }
     public void EndGameFeedBack()
     {

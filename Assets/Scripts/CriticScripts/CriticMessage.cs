@@ -9,7 +9,6 @@ public class CriticMessage : MonoBehaviour
     public TextMeshProUGUI Message;
     public Critic critic;
     Animator animator;
-    public bool depopMessage = false;
 
     void Start()
     {
@@ -27,7 +26,6 @@ public class CriticMessage : MonoBehaviour
     IEnumerator MessageCritic()
     {
         yield return new WaitForSeconds(10);
-        Debug.Log("depop");
         Message.text = "";
     }
     
