@@ -42,7 +42,7 @@ public class YoannPlayer : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (inTirroirRange)
             {

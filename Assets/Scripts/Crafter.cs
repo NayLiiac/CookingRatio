@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEditor.TerrainTools;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Crafter : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Crafter : MonoBehaviour
     public string ingredient_1 = null;
     public string ingredient_2 = null;
 
+    public Image foodPicture;
     public GameObject critic;
 
     // Dico
@@ -75,7 +77,7 @@ public class Crafter : MonoBehaviour
         dicoFood.Add("alcoolkraken",            "lekraken");
         dicoFood.Add("inimoisiinimoisi",        "boitedepandore");
 
-        
+        foodPicture.gameObject.SetActive(false);
     }
     
 
@@ -88,8 +90,7 @@ public class Crafter : MonoBehaviour
         else if (ingredient_2== "")
         {
             ingredient_2 = ingredient;
-            critic.GetComponent<Critic>().plat = Craft();
-            critic.GetComponent<Critic>().SearchPlat();
+            Craft();
         }
     }
 
@@ -108,7 +109,7 @@ public class Crafter : MonoBehaviour
         return value;
     }
 
-    public string Craft() {
+    public void Craft() {
         string testKey = BuildString(ingredient_1, ingredient_2);
         string testKeyRevert = BuildString(ingredient_2, ingredient_1);
 
@@ -126,7 +127,21 @@ public class Crafter : MonoBehaviour
         ingredient_1 = "";
         ingredient_2 = "";
         Debug.Log("Tu as réalisé : " + result);
+        StartCoroutine(DisplayFood(result));
+    }
 
-        return result;
+    IEnumerator DisplayFood(string food)
+    {
+        foodPicture.gameObject.SetActive(true);
+
+        Debug.Log("Entre coroutine");
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        Debug.Log("Got Input");
+
+        foodPicture.gameObject.SetActive(false);
+        critic.GetComponent<Critic>().plat = food;
+        critic.GetComponent<Critic>().SearchPlat();
+
+        yield return null;
     }
 }
