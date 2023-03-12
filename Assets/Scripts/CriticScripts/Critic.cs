@@ -15,7 +15,6 @@ public class Critic : MonoBehaviour
 
     public string criticReaction;
 
-    Animator animator;
 
     void Start()
     {
@@ -72,7 +71,6 @@ public class Critic : MonoBehaviour
 
     public void SearchPlat()
     {
-
         foreach (string note in DicoPlats.Values)
         {
             if (DicoPlats.ContainsKey(plat)) // SI ça contient le plat
@@ -83,13 +81,12 @@ public class Critic : MonoBehaviour
                 {
                     recipecounter.AddRecipe();
                     recipeUnlocked.Add(plat);
-                    StartCoroutine(Message());
+                    criticReaction = DicoPlats[plat];
 
                 }
                 if (recipeUnlocked.Contains(plat))
                 {
-                    StartCoroutine(Message());
-                    
+                    criticReaction = DicoPlats[plat];
                     break;
                 }
             }
@@ -97,12 +94,5 @@ public class Critic : MonoBehaviour
         message.MessageSent(); // Renvoie la critique
     }
 
-    IEnumerator Message()
-    {
-        criticReaction = DicoPlats[plat];
-        yield return new WaitForSeconds(20);
-        animator.SetBool("DepopMessage", true);
-        yield return new WaitForSeconds(2);
-        animator.SetBool("DepopMessage", false);
-    }
+   
 }
