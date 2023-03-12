@@ -12,7 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/Menus/Credits.unity
     guid: 9888fd7780f83734e8f70595386c40a0
   - enabled: 1
+    path: Assets/Scenes/Game/Menus/Option.unity
+    guid: aaea8c1c1ba6a8f4499e7040d2d27222
+  - enabled: 1
     path: Assets/Scenes/Game/Game.unity
     guid: 521414d67a96bcd41affc834f615019d
+  - enabled: 1
+    path: Assets/Scenes/Game/Menus/End.unity
+    guid: de09a99e581caac47ac28ae21cae8b63
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 7bc07739891f7fc4aa7506db4957309e, type: 2}
