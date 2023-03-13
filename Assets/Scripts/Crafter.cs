@@ -12,6 +12,7 @@ public class Crafter : MonoBehaviour
     public string ingredient_2 = null;
 
     public Image foodPicture;
+    public Image VisuelPlaced;
     public GameObject critic;
 
     // Dico
@@ -31,6 +32,7 @@ public class Crafter : MonoBehaviour
 
         soundEffect = GetComponent<AudioSource>();
         foodPicture.gameObject.SetActive(false);
+        VisuelPlaced.gameObject.SetActive(false);
     }
 
     private void initRecettes()
@@ -89,7 +91,6 @@ public class Crafter : MonoBehaviour
         dicoFood.Add("alcoolkraken", "lekraken");
         dicoFood.Add("inimoisiinimoisi", "boitedepandore");
     }
-    
     private void initFoodImages()
     {
         //Bac 1
@@ -150,6 +151,7 @@ public class Crafter : MonoBehaviour
 
     public void AddIngredient(string ingredient)
     {
+        StartCoroutine(ItemPlaced());
         if (ingredient_1 == "")
         {
             ingredient_1 = ingredient;
@@ -206,6 +208,14 @@ public class Crafter : MonoBehaviour
         ingredient_1 = "";
         ingredient_2 = "";
         StartCoroutine(DisplayFood(result));
+    }
+
+    IEnumerator ItemPlaced()
+    {
+        VisuelPlaced.gameObject.SetActive(true);
+        yield return new WaitForSeconds((float)0.5);
+        VisuelPlaced.gameObject.SetActive(false);
+        yield return null;
     }
 
 
