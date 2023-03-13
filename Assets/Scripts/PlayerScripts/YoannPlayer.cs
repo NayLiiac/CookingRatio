@@ -8,6 +8,8 @@ public class YoannPlayer : MonoBehaviour
     public int speed = 5;
     public GameObject tirroir;
     public GameObject crafter;
+    public GameObject Tuto1;
+    public GameObject Tuto2;
     public string heldIngredient = null;
 
     private bool inTirroirRange = false;
@@ -16,7 +18,8 @@ public class YoannPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Tuto1.SetActive(true);
+        Tuto2.SetActive(true);
     }
 
     // Update is called once per frame
@@ -24,19 +27,19 @@ public class YoannPlayer : MonoBehaviour
     {
         if (!isTirroirOpen)
         {
-            if (Input.GetKey(KeyCode.UpArrow))
+            if ((Input.GetKey(KeyCode.UpArrow)) || (Input.GetKey(KeyCode.Z)))
             {
                 this.transform.position = this.transform.position + new Vector3(0, speed * Time.deltaTime, 0);
             }
-            if (Input.GetKey(KeyCode.DownArrow))
+            if ((Input.GetKey(KeyCode.DownArrow)) || (Input.GetKey(KeyCode.S)))
             {
                 this.transform.position = this.transform.position + new Vector3(0, -speed * Time.deltaTime, 0);
             }
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if ((Input.GetKey(KeyCode.LeftArrow)) || (Input.GetKey(KeyCode.Q)))
             {
                 this.transform.position = this.transform.position + new Vector3(-speed * Time.deltaTime, 0, 0);
             }
-            if (Input.GetKey(KeyCode.RightArrow))
+            if ((Input.GetKey(KeyCode.RightArrow)) || (Input.GetKey(KeyCode.D)))
             {
                 this.transform.position = this.transform.position + new Vector3(speed * Time.deltaTime, 0, 0);
             }
@@ -47,12 +50,14 @@ public class YoannPlayer : MonoBehaviour
             if (inTirroirRange)
             {
                 tirroir.GetComponent<TirroirBehaviour>().OpenUI();
+                Tuto1.SetActive(false);
                 isTirroirOpen = true;
             }
             
             if (inCrafterRange)
             {
                 this.PlaceIngredient();
+                Tuto2.SetActive(false);
             }
         }
     }
@@ -85,7 +90,6 @@ public class YoannPlayer : MonoBehaviour
     public void RecieveIngredient(string ingredient)
     {
         this.heldIngredient = ingredient;
-        Debug.Log(heldIngredient);
         tirroir.GetComponent<TirroirBehaviour>().CloseUI();
         isTirroirOpen = false;
     }
@@ -94,13 +98,8 @@ public class YoannPlayer : MonoBehaviour
     {
         if (heldIngredient != null)
         {
-            Debug.Log("Tu as placé : " + heldIngredient);
             crafter.GetComponent<Crafter>().AddIngredient(heldIngredient);
             heldIngredient = null;
-        }
-        else
-        {
-            Debug.Log("ERROR : Player : PlaceIngredient : heldIngredient is null");
         }
     }
 }

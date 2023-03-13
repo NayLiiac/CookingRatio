@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: a792f1148e5948d40a268e3e9a3a0ed1
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Amsterdam Signature Duo
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e0ae892ad22c87c4090a96277c6e331d, type: 3}
+  - {fileID: 12800000, guid: 77ef8875904e055429482b383edde0c2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

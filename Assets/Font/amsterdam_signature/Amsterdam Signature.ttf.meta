@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 358afc74ddca3b345a7a062b6ced2887
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Amsterdam Signature
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d3c614653dec69b4eb9b53451c7af1ad, type: 3}
+  - {fileID: 12800000, guid: 2406bf0cab62ca547b2eebf65fce4201, type: 3}
+  - {fileID: 12800000, guid: 826a76ed6b7ada344a4c3e14f3099b27, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
