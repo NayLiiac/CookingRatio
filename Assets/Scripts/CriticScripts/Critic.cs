@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UIElements.Experimental;
 
@@ -16,7 +17,7 @@ public class Critic : MonoBehaviour
 
     public string criticReaction;
 
-
+    public Poussin poussin;
     void Start()
     {
         DicoPlats.Add("gratindeflingue",        "Surprenant !"); //
@@ -76,6 +77,11 @@ public class Critic : MonoBehaviour
         {
             platdouteuxcounter.AddDouteux();
             Debug.Log("blablabla");
+        }
+        if (DicoPlats[plat].Equals("“Ce pigeon est tellement cru qu’il peut encore voler!” Gordon Ramsay"))
+        {
+            poussin.Eclosion();
+            
         }
         foreach (string note in DicoPlats.Values)
         {
