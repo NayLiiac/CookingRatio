@@ -1,12 +1,7 @@
-using Microsoft.Unity.VisualStudio.Editor;
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
-using UnityEditor.TerrainTools;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 
 public class Crafter : MonoBehaviour
@@ -188,7 +183,6 @@ public class Crafter : MonoBehaviour
         dicoImage.TryGetValue(key, out value);
         if (value == null)
         {
-            Debug.Log("C'est nul");
             value = defaultSprite;
         }
         return value;
@@ -205,14 +199,12 @@ public class Crafter : MonoBehaviour
             result = CheckDicoFood(testKeyRevert);
             if (result == "platdouteux") {
 
-                Debug.Log("Tu as réalisé de la merde");
                 result = "platdouteux";
             }
         }
 
         ingredient_1 = "";
         ingredient_2 = "";
-        Debug.Log("Tu as réalisé : " + result);
         StartCoroutine(DisplayFood(result));
     }
 
@@ -224,11 +216,9 @@ public class Crafter : MonoBehaviour
         foodPicture.GetComponent<Animator>().SetTrigger("Jumpscare");
         soundEffect.PlayDelayed((float)0.4);
 
-        Debug.Log("Entre coroutine");
         yield return new WaitForSeconds((float)1);
         
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
-        Debug.Log("Got Input");
 
         foodPicture.gameObject.SetActive(false);
         critic.GetComponent<Critic>().plat = food;
